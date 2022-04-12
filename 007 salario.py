@@ -6,6 +6,6 @@ if salario[1:].isdigit():
         salarioMensual = salario/pagas
         print("Salario bruto mensual es:", salarioMensual, "€ en", pagas, "pagas")
     else:
-        print("salario negativo")
+        print("Salario negativo")
 else:
     print("Error, datos mal introducidos")
