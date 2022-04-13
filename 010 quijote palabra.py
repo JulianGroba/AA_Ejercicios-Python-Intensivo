@@ -13,13 +13,13 @@ webUrl = urllib.request.urlopen ('https://www.gutenberg.org/files/2000/2000-0.tx
 data = webUrl.read()
 print("URL leida.")
 #trabajar la info
-data =str(data)
-dataMayusculas= data.upper()
+dataBruto =str(data)
+dataMayusculas= dataBruto.upper()
 lista = dataMayusculas.split()
 print("Lista de datos creada")
 #pedir la palbra clave
 palabraClave = input("Indicar la palabra clave:").upper()
-recuento = data.count(palabraClave)
+recuento = dataMayusculas.count(palabraClave)
 print("La palabra clave elegida: '"+palabraClave +"' aparece "+str(recuento)+" veces.")
 #comprobar si la palabra clave está en la lista
 if palabraClave in lista:
