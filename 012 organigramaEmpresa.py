@@ -30,5 +30,5 @@ for depa in emp:
     print("Departamento:", depa[0])
     for empl in depa[1]:
         print("--Nombre:", empl[0])
-        print("--Categoria",empl[1])
+        print("--Categoria:",empl[1])
 
