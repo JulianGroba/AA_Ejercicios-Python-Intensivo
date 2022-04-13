@@ -17,6 +17,10 @@ dataMayusculas= data.upper()
 lista = dataMayusculas.split()
 #pedir la palbra clave
 palabraClave = input("Indicar la palabra clave:").upper()
-print("aparece "+str(data.count(palabraClave)))
+recuento = data.count(palabraClave)
+print("aparece "+str(recuento))
 #comprobar si la palabra clave está en la lista
-print(palabraClave in lista)
+if palabraClave in lista:
+    print("La palabra elegida aparece en el Quijote, la siguiente cantidad de veces: "+str(recuento))
+else:
+    print("La palabra clave no aparece en el Quijote")
