@@ -11,14 +11,16 @@ import urllib.request
 #conseguir la info
 webUrl = urllib.request.urlopen ('https://www.gutenberg.org/files/2000/2000-0.txt')
 data = webUrl.read()
+print("URL leida.")
 #trabajar la info
 data =str(data)
 dataMayusculas= data.upper()
 lista = dataMayusculas.split()
+print("Lista de datos creada")
 #pedir la palbra clave
 palabraClave = input("Indicar la palabra clave:").upper()
 recuento = data.count(palabraClave)
-print("aparece "+str(recuento))
+print("La palabra clave elegida: '"+palabraClave +"' aparece "+str(recuento)+" veces.")
 #comprobar si la palabra clave está en la lista
 if palabraClave in lista:
     print("La palabra elegida aparece en el Quijote, la siguiente cantidad de veces: "+str(recuento))
