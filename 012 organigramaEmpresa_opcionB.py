@@ -44,4 +44,13 @@ for depa in emp:
     for empl in depa[1]:
         print("--Nombre:", empl[0])
         print("--Categoria:",empl[1])
-
+#buscar la categoría efr un empleado
+introdyce_nombre_buscar = input("Introduce el nombre del empleado:")
+for depa in emp:
+       for empl in depa[1]:
+           if empl[0]==introdyce_nombre_buscar:
+                print(empl[0],"tiene la siguiente categoria:",empl[1],"en el departame3nto:", depa[0],".")
+           """"
+           elif empl[0]!=introdyce_nombre_buscar:
+                print("Tr5abajador no incluido en base de datos o nombre mal escrito.")
+"""
