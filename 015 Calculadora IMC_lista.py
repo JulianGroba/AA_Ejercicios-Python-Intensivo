@@ -16,9 +16,9 @@ imc = peso/ altura**2
 print("%.2f" %imc)#redondear a dos decimales
 rango = ""
 
-for ref in referencias:
-    if (imc>=ref[0]):
-        rango = ref[1]
+for ref_actual in referencias:
+    if (imc>=ref_actual[0]):
+        rango = ref_actual[1]
         break
 
 print("Tu estado es:",rango)
