@@ -1,0 +1,2 @@
+El estado del paciente Beaver Canadian es Peso saludable
+El IMC de Beaver Canadian es 18.710949246550168
