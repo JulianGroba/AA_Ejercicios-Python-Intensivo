@@ -9,4 +9,4 @@ for dia in dias:
     else:
         print(dia.capitalize(),"no es el día buscado.")
 
-print ("Ejercicio resuelto.")
+#print ("Ejercicio resuelto.")
