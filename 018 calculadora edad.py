@@ -12,8 +12,8 @@ ano_nacimiento = int(input("Indicar el año de nacimiento:"))
 edad = ano_actual-ano_nacimiento
 categoria =""
 
-if edad > JUBILADO:
-   categoria = "Jubilado"
+if edad >= JUBILADO:
+    categoria = "Jubilado"
 elif edad > ADULTO:
     categoria = "Adulto"
 elif edad >= MENOR_DE_EDAD:
