@@ -17,6 +17,6 @@ else:
     print("Has acertado con el siguiente número de intentos:", numError)
     print("El planeta secreto era:",planeta_secreto.capitalize())
 if numError==0:
-    print("Juego Terminado sin errores")
+    print("Juego Terminado sin errores o a la primera")
 else:
     print("Juego Terminado")
