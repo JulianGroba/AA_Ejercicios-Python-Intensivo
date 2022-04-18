@@ -54,10 +54,7 @@ def funcion_main():
             else:
                 print("Opción no válida.")
         except:
-            print("Error inesperado")
-
-        
-
+            print("Error inesperado")  
 
 funcion_main()
 
