@@ -8,10 +8,6 @@ Sumar dos números, Restar dos números, Multiplicar dos números, Dividir dos n
 ¿0. Salir.?
 Introduce la operación que quieras realizar.
 """
-
-from asyncio import open_connection
-
-
 def sumar(s1,s2):
     return s1+s2
 def restar(s1,s2):
