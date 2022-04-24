@@ -1,6 +1,6 @@
 NOMBRE_FICHERO = "cotizacion.dat"
 NOMBRE_FICHERO_VENTA_NEGATIVA = "datos_negativo.dat"
-NOMBRE_FICHERO_VENTA_POSITIVA= "datos_positivo.dat"
+NOMBRE_FICHERO_VENTA_POSITIVA = "datos_positivo.dat"
 LIMITE = 0
 
 def cotizaciones (nombre_fichero):
@@ -44,18 +44,18 @@ def fichero_venta_negativo(diccionario):
         print("Fichero creado.")
 
 def fichero_venta_positivo(diccionario):
-    global fichero_datos
+    global fd
     try:
-        fichero_datos = open(NOMBRE_FICHERO_VENTA_POSITIVA,"w")
+        fd = open(NOMBRE_FICHERO_VENTA_POSITIVA,"w")
         for k,v in diccionario.items():
             if v[1] > LIMITE:
-                linea1 = fichero_datos.write("AVISO:\n")
-                linea2 = fichero_datos.write(str(v[0]) + " mayor de " + str(LIMITE) + "\n")
-                linea3 = fichero_datos.write("La clave " + k + " se debería vender.\n")
-                linea4 = fichero_datos.write("La cotización del día es " + str(v[1]) + ".\n\n")
+                linea1 = fd.write("AVISO:\n")
+                linea2 = fd.write(str(v[0]) + " mayor de " + str(LIMITE) + "\n")
+                linea3 = fd.write("La clave " + k + " se debería vender.\n")
+                linea4 = fd.write("La cotización del día es " + str(v[1]) + ".\n\n")
                 #print(linea1,linea2,linea3, linea4)
-            elif fichero_datos.closed == True:
-                fichero_datos.close()
+            elif fd.closed == True:
+                fd.close()
     except:
         print("Error en la ejecución.")
     finally:
@@ -82,4 +82,4 @@ fichero_venta_negativo(monedas)
 fichero_venta_positivo(monedas)
 
 #ULTIMA PARTE DEL EJERCICIO
-pedir_cotizacion(monedas)
+#pedir_cotizacion(monedas)
