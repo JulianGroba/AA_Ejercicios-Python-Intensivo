@@ -1,4 +1,6 @@
 NOMBRE_FICHERO = "cotizacion.dat"
+NOMBRE_FICHERO_VENTA_NEGATIVA = "datos_negativo.dat"
+NOMBRE_FICHERO_VENTA_POSITIVA= "datos_positivo.dat"
 LIMITE = 0
 
 def cotizaciones (nombre_fichero):
@@ -26,7 +28,7 @@ def cot_pantalla(diccionario):
 def fichero_venta_negativo(diccionario):
     global fichero_datos
     try:
-        fichero_datos = open("datos_negativo.txt","w")
+        fichero_datos = open(NOMBRE_FICHERO_VENTA_NEGATIVA,"w")
         for k,v in diccionario.items():
             if v[1] < LIMITE:
                 linea1 = fichero_datos.write("AVISO:\n")
@@ -44,7 +46,7 @@ def fichero_venta_negativo(diccionario):
 def fichero_venta_positivo(diccionario):
     global fichero_datos
     try:
-        fichero_datos = open("datos_positivo.txt","w")
+        fichero_datos = open(NOMBRE_FICHERO_VENTA_POSITIVA,"w")
         for k,v in diccionario.items():
             if v[1] > LIMITE:
                 linea1 = fichero_datos.write("AVISO:\n")
