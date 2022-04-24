@@ -20,8 +20,8 @@ def cot_pantalla(diccionario):
     #print("Clave:",k,":Valor:",v[1])
         if v[1] < LIMITE:
             print("AVISO\n")
-            print(v[0], "menor de", LIMITE, "\n")
-            print("La clave", k, "se debería vender\n")
+            print(("La moneda {item1} es menor del limite inicado, {item2}.\n").format(item1 = v[0], item2 = LIMITE))
+            print(("La clave {item1} se debería vender.\n").format(item1 = k))
 
 def fichero_venta_negativo(diccionario):
     global fichero_datos
@@ -71,7 +71,7 @@ def pedir_cotizacion(diccionario):
 
 #PRIMERA PARTE DEL EJERCICIO
 monedas = cotizaciones(NOMBRE_FICHERO)
-#cot_pantalla(monedas)
+cot_pantalla(monedas)
 
 #SEGUNDA PARTE DEL EJERCICIO
 fichero_venta_negativo(monedas)
