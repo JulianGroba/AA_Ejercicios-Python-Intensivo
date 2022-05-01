@@ -13,6 +13,7 @@ def get_dict_from_json_url(url):
 
 #Obtenemos el diccionario desde un JSON almacenado en un fichero
 #datos = get_dict_from_json_file("indiana.json")
+
 #Obtenemos el diccionario desde un JSON almacenado en una URL
 datos = get_dict_from_json_url("https://it-python-admin.github.io/peliculas/indiana-last-crusade.json")
 
