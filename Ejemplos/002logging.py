@@ -12,7 +12,11 @@ logging.basicConfig(
 
 
 
-def get_image_from_url(url, file_name):
+def get_image_from_url(url : str, file_name : str):
+    """
+    Te aparece como ayuda cuando llamas a la función.
+    Puedes indicar la salida de dicha función y lo que se espera para que funciones
+    """
     logging.debug("Entrando en la función get_image_froom_url")
     logging.debug(f"Wl valor de la url es {url}")
     with open(file_name,"wb") as fichero:
