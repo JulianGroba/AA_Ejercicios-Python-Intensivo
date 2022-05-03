@@ -18,8 +18,8 @@ def calculadora_persona(nombre : str, edad : int, color: str):
         raise EdadInsuficienteError
     if color.upper() == "NARANJA":
         raise MalGustoError
-    else:
-        print(("El nombre {n} tiene la siguiente edad {e} y su color favorito es {c}.").format(n = nombre, e = edad, c = color))
+    #else:
+        #print(("El nombre {n} tiene la siguiente edad {e} y su color favorito es {c}.").format(n = nombre, e = edad, c = color))
 
 nombre = input("Indtroducir nombre:")
 edad = int(input("Introducir edad:"))
