@@ -19,5 +19,11 @@ Controlar errores en los accesos a ficheros.
 Incluir dos pruebas unitarias.
 Incluir un manual de instrucciones de los diferentes programas.
 
-
 """
+import generador
+import mapeador
+
+
+generador.generar_excel()
+
+

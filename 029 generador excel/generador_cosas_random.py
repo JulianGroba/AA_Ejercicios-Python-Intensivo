@@ -1,7 +1,7 @@
 import random
 
 def generar_listado_personas(numero):
-    nombres = ("Jukian","Fernando","Andres","Juan Luis", "Victor", "Emilio", "Antonio")
+    nombres = ("Julian","Fernando","Andres","Juan Luis", "Victor", "Emilio", "Antonio")
     apellidos = ("Groba","Paniagua","Martin","Roca","Ruiz","Perez","Arbelo","Gonzalo","Gutierrez","Olivieri")
     personas=[]
     for i in range(numero):
