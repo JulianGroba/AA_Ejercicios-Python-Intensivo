@@ -24,6 +24,8 @@ import generador
 import mapeador
 
 
-generador.generar_excel()
+#generador.generar_excel()
+print(mapeador.leer_excel())
+
 
 

@@ -20,6 +20,11 @@ def leer_excel():
                 else:
                     nombres.append(separados[i])
             #print(nombres, valores) # QAQC
+        logging.debug("Comprobación de que ambas listas tienen el mismo número de elementos.")
+        while len(nombres)!=len(valores):
+            nombres.pop()
+        else:
+            pass
         return nombres, valores  
     except:
         print("Proceso terminado sin ejecución. Consultar al informático.")    
@@ -29,4 +34,5 @@ def leer_excel():
 #Comprobación de funcionamiento.
 
 #leer_excel()
+
 
