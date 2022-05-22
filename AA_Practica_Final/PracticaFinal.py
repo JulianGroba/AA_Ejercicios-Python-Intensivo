@@ -23,6 +23,7 @@ Incluir un manual de instrucciones de los diferentes programas.
 import generador
 import mapeador
 #import operadores
+import mostrador
 
 def mostrar_menu():
     print("1. Generar Valores y Exportar a Excel")
@@ -39,7 +40,7 @@ def controlador():
             opcion = int(input("Elegir la opción deseada:"))
             try:
                 if opcion in (1,2,3,4):
-                    print("Procediendo con la opción deseada.\n")
+                    print("\nProcediendo con la opción deseada.\n")
                     if opcion == 1:
                         #Parte 1
                         generador.generar_excel()
@@ -54,9 +55,9 @@ def controlador():
                         print("\nEjecución Terminada\n".rjust(150))
                     elif opcion == 4:
                         mapeador.valores_finales()
-                        #mostrador.interfaz_pantalla()
+                        mostrador.interfaz_pantalla()
                         print("\nEjecución Terminada\n".rjust(150))
-                    #else:    
+                    else:    
                         print("Error. Póngase en contacto con ITTI")
                 elif opcion == 0:
                     print("Saliendo del sistema.")

@@ -5,22 +5,23 @@ import mapeador
 
 def interfaz_pantalla():
     logging.debug("Apertura de datos, se llama a la función creada en mapeador.")
-    lista = mapeador.leer_excel()
-    nombres = lista[0]
-    valores = lista[1]
-    listaZip = list(zip(nombres, valores))
-    logging.debug("Crear cabecera.")
-    print(listaZip)
-    #print(listaZip[0])
-    """
-    print(nombres)
-    print(list(nombres))
-    print(valores)
-    print(list(valores))
+    diccionIni = mapeador.valores_finales()
+    lista = mapeador.valor_total()
+    sumatorio = lista[0]
+    cantidad = lista[1]
+    logging.debug("Mostrando valores por consola.")
+    print("NOMBRE".ljust(25),"VALOR".rjust(75), sep="           ")
+    print("======".ljust(25),"=====".rjust(75), sep="           ")
+    for k,v in diccionIni.items():
+        print(str(k).ljust(25),str(v).rjust(75),sep="           ")
+    print("======".ljust(25),"=====".rjust(75), sep="           ")
+    print((str(cantidad) +" PERSONAS").ljust(25),str(sumatorio).rjust(75), sep="           ")
+
+
     
-    print(nombres[0].ljust(50), valores[0].rjust[50])
-    print("==========".ljust(50), "==========".rjust(50))
-    """
+    
+
+    
 #print("Ejecución Termianada. Parte 4.")
 
 #Comprobación de funcionamiento.

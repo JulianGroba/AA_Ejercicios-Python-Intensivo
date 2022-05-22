@@ -5,7 +5,7 @@ import operadores
 #logging.getLogger().setLevel(logging.ERROR) #para cambiar el log mostrado en consola
 NUMERODENOMBRES = 1000
 NOMBREFICHERO = "datos.csv"
-VALORLIMITE = 400 #Cambiar conforme al enunciado a 1000 después de las pruebas.
+VALORLIMITE = 1000 #Cambiar conforme al enunciado a 1000 después de las pruebas.
 
 def leer_excel():
     nombres = [] #odd_i
@@ -91,6 +91,20 @@ def nombre_user():
         print(("El valor medio es: {vm}, el valor máximo es: {vmax}, el valor mínimo es: {vmin} y el valor de la suma es {sum} para el nombre elegido: {nombre}.").format(nombre=nombreComprobar, sum=valorSuma, vm = valorMedia, vmax = valorMax, vmin = valorMin))
 
 #print("Ejecución Termianada. Parte 2.")
+def valor_total():
+    logging.debug("Traer los datos del excel: nombres y valores.")
+    lista=leer_excel()
+    valores = lista[1]
+    logging.debug("Retirar el string.")
+    if "VALOR" in valores:
+        valores.remove("VALOR")
+    else:
+        pass
+    logging.debug("Sacar valores.")
+    valorSuma=operadores.mateSuma(valores)
+    cantidad = len(valores)
+    logging.debug("Guardar resultados elegidos.")
+    return valorSuma, cantidad
 
 def valores_excel():
     logging.debug("Traer los datos del excel: nombres y valores.")
@@ -110,7 +124,7 @@ def valores_excel():
     logging.debug("Mostrar por pantalla los resultados elegidos.")
     print(("Hay el siguiente número de valores: {numero}.").format(numero=cantidad))
     print(("El valor medio es: {vm}, el valor máximo es: {vmax}, el valor mínimo es: {vmin} y el valor de la suma es {sum} incluidos en el excel.").format(sum=valorSuma, vm = valorMedia, vmax = valorMax, vmin = valorMin))
-
+    return valorSuma
 #print("Ejecución Termianada. Parte 3.")
 
 def modificador_nombres(diccionario):
@@ -160,7 +174,9 @@ def valores_finales():
     logging.debug("Ordenaro por orden alfabético.")
     valores_ord = {k: v for k, v in sorted(resultado.items())}
     logging.debug("QAQC",valores_ord)
-    print("Elemento termiando.")
+    #print("Elemento termiando.")
+    #print(valores_ord)
+    return valores_ord
     
 #Comprobación de funcionamiento.
 
