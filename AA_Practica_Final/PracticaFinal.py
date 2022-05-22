@@ -24,9 +24,14 @@ import generador
 import mapeador
 #import operadores
 
-
+#TODO Interfaz gráfica.
+#Parte 1
 #generador.generar_excel()
+#Parte 2
 #mapeador.nombre_user()
-
+#Parte 3
+mapeador.valores_excel()
+#Parte 4
+#TODO mostrador.interfaz_pantalla()
 
 

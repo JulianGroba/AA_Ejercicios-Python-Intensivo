@@ -32,7 +32,7 @@ def leer_excel():
     except:
         print("Proceso terminado sin ejecución. Consultar al informático.")    
     fichero.close()
-    print("Proceso terminado. Punto 2 Completado")
+    print("Proceso terminado.")
 
 def buscador_indices(lista, elemento):
     listaIndices = []
@@ -90,8 +90,31 @@ def nombre_user():
         print(("El nombre elegido: {nombre} ha aparecido el siguiente número de veces: {numero}.").format(nombre=nombreComprobar, numero=cantidad))
         print(("El valor medio es: {vm}, el valor máximo es: {vmax}, el valor mínimo es: {vmin} y el valor de la suma es {sum} para el nombre elegido: {nombre}.").format(nombre=nombreComprobar, sum=valorSuma, vm = valorMedia, vmax = valorMax, vmin = valorMin))
 
-print("Ejecución Termianada. Parte 2.")
+#print("Ejecución Termianada. Parte 2.")
+
+def valores_excel():
+    logging.debug("Traer los datos del excel: nombres y valores.")
+    lista=leer_excel()
+    valores = lista[1]
+    logging.debug("Retirar el string.")
+    if "VALOR" in valores:
+        valores.remove("VALOR")
+    else:
+        pass
+    logging.debug("Sacar valores para mostrar en pantalla.")
+    valorSuma=operadores.mateSuma(valores)
+    valorMedia=operadores.mateMedia(valores)
+    valorMax=operadores.vMax(valores)
+    valorMin=operadores.vMin(valores)
+    cantidad = len(valores)
+    logging.debug("Mostrar por pantalla los resultados elegidos.")
+    print(("Hay el siguiente número de valores: {numero}.").format(numero=cantidad))
+    print(("El valor medio es: {vm}, el valor máximo es: {vmax}, el valor mínimo es: {vmin} y el valor de la suma es {sum} incluidos en el excel.").format(sum=valorSuma, vm = valorMedia, vmax = valorMax, vmin = valorMin))
+
+#print("Ejecución Termianada. Parte 3.")
+
 #Comprobación de funcionamiento.
 
 #leer_excel()
 #nombre_user()
+#valores_excel()
