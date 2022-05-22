@@ -53,42 +53,17 @@ def nombre_user():
     valores = lista[1]
     logging.debug("Cambiar que todos los nombres estan en Mayúsculas.")
     nombres_Mayus = [x.upper() for x in nombres]
-    logging.debug("Crear un conjunto con los nombres incluidos en los datos.")
-    nombresSinTitulo = nombres_Mayus
-    if "NOMBRE" in nombresSinTitulo:
-        nombresSinTitulo.remove("NOMBRE")
-        conjuntoNombres = set(nombresSinTitulo)
-    else:
-        conjuntoNombres = set(nombres_Mayus)
-    logging.debug("Pedir dato al usario.")
-    print("Los nombres incluidos en los datos son:")
-    print(conjuntoNombres)
-    nombreComprobar = input("Incluir un nombre de la lista anterior:").upper()
-    n=0 # para romper bucle infinito en caso de estupidez humana.
-    
-    while nombreComprobar not in conjuntoNombres:   
-        if n == 3:
-            listNom = list(conjuntoNombres)
-            nombreComprobar = random.choice(listNom)
-            print("Se ha decidido por el siguiente nombre:"+nombreComprobar)
-        else:
-            n+=1 
-            print ("Nombre no incluido en la lista, por favor incluir nombre de la lista.")
-            print(conjuntoNombres)
-            nombreComprobar = input("Incluir un nombre de la lista anterior:").upper()
-    else:
-    
-        miDiccionario = dict(nombres,valores)
-        print(miDiccionario)
-        print ("Nombre SI incluido en la lista.")
-        print(type(nombreComprobar))
-        indiceLista = nombres_Mayus.index(nombreComprobar)
-        print(indiceLista)
-    #print(nombres, valores)
+       
+    nombreComprobar = "JULIAN"
+    cantidad = nombres_Mayus.count(nombreComprobar)
+    print(cantidad)
+    #print(nombres)
+    #print(valores)
+    print(buscador_indices(nombres_Mayus,nombreComprobar))
+    print(valor_indice(buscador_indices(nombres_Mayus,nombreComprobar),nombres_Mayus))
+    print(valor_indice(buscador_indices(nombres_Mayus,nombreComprobar),valores))
 
-#Comprobación de funcionamiento.
 
-#leer_excel()
 nombre_user()
 
 
