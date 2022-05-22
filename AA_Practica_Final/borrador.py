@@ -46,6 +46,9 @@ def valor_indice(listaIndices, lista):
         listaValores.append(valor)
     return listaValores
 
+
+    
+
 def nombre_user():
     logging.debug("Traer los datos del excel: nombres y valores.")
     lista=leer_excel()

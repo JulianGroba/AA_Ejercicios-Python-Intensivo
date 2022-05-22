@@ -22,10 +22,11 @@ Incluir un manual de instrucciones de los diferentes programas.
 """
 import generador
 import mapeador
+#import operadores
 
 
 #generador.generar_excel()
-print(mapeador.leer_excel())
+mapeador.nombre_user()
 
 
 

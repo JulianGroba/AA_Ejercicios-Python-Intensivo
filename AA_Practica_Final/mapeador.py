@@ -1,5 +1,7 @@
 import logging
 import random
+import operadores
+
 #logging.getLogger().setLevel(logging.ERROR) #para cambiar el log mostrado en consola
 NUMERODENOMBRES = 1000
 NOMBREFICHERO = "datos.csv"
@@ -77,18 +79,19 @@ def nombre_user():
             print(conjuntoNombres)
             nombreComprobar = input("Incluir un nombre de la lista anterior:").upper()
     else:
-    
-        miDiccionario = dict(nombres,valores)
-        print(miDiccionario)
-        print ("Nombre SI incluido en la lista.")
-        print(type(nombreComprobar))
-        indiceLista = nombres_Mayus.index(nombreComprobar)
-        print(indiceLista)
-    #print(nombres, valores)
+        logging.debug("Sacar valores para mostrar en pantalla.")
+        valorNombreElegido= valor_indice(buscador_indices(nombres_Mayus,nombreComprobar),valores)
+        valorSuma=operadores.mateSuma(valorNombreElegido)
+        valorMedia=operadores.mateMedia(valorNombreElegido)
+        valorMax=operadores.vMax(valorNombreElegido)
+        valorMin=operadores.vMin(valorNombreElegido)
+        cantidad = len(valorNombreElegido)
+        logging.debug("Mostrar por pantalla los resultados elegidos.")
+        print(("El nombre elegido: {nombre} ha aparecido el siguiente número de veces: {numero}.").format(nombre=nombreComprobar, numero=cantidad))
+        print(("El valor medio es: {vm}, el valor máximo es: {vmax}, el valor mínimo es: {vmin} y el valor de la suma es {sum} para el nombre elegido: {nombre}.").format(nombre=nombreComprobar, sum=valorSuma, vm = valorMedia, vmax = valorMax, vmin = valorMin))
 
+print("Ejecución Termianada. Parte 2.")
 #Comprobación de funcionamiento.
 
 #leer_excel()
-nombre_user()
-
-
+#nombre_user()
