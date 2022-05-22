@@ -1,5 +1,6 @@
 import random
 import logging
+#logging.getLogger().setLevel(logging.ERROR) #para cambiar el log mostrado en consola
 NUMERODENOMBRES = 1000
 NOMBREFICHERO = "datos.csv"
 n = 0
@@ -55,7 +56,8 @@ def generar_excel():
     fichero.close()
     print("Proceso terminado. Excel Creado.")
 
-print("Parte 1 terminada.")
+#print("Parte 1 terminada.")
+
 #Comprobación de funcionamiento.
 #generar_excel()
 

@@ -5,6 +5,7 @@ import operadores
 #logging.getLogger().setLevel(logging.ERROR) #para cambiar el log mostrado en consola
 NUMERODENOMBRES = 1000
 NOMBREFICHERO = "datos.csv"
+VALORLIMITE = 400 #Cambiar conforme al enunciado a 1000 después de las pruebas.
 
 def leer_excel():
     nombres = [] #odd_i
@@ -62,7 +63,6 @@ def nombre_user():
         conjuntoNombres = set(nombresSinTitulo)
     else:
         conjuntoNombres = set(nombres_Mayus)
-    logging.debug("Pedir dato al usario.")
     print("Los nombres incluidos en los datos son:")
     print(conjuntoNombres)
     nombreComprobar = input("Incluir un nombre de la lista anterior:").upper()
@@ -113,8 +113,58 @@ def valores_excel():
 
 #print("Ejecución Termianada. Parte 3.")
 
+def modificador_nombres(diccionario):
+    nombres = diccionario.keys()
+    valores = diccionario.values()
+    for nombre in list(nombres):
+        if "A" in nombre:
+            nombre2 = nombre.replace("A","@")
+            diccionario[nombre2] = diccionario.pop(nombre)
+        else:
+            pass
+    return diccionario
+
+def borrar_diccionario(diccionario):
+    diccion2 = {}
+    for k,v in diccionario.items():
+        if v > VALORLIMITE: 
+            diccion2[k]=v
+    return diccion2
+
+def valores_finales():
+    logging.debug("Traer los datos del excel: nombres y valores.")
+    lista=leer_excel()
+    nombres = lista[0]
+    valores = lista[1]
+    logging.debug("Cambiar que todos los nombres estan en Mayúsculas.")
+    nombres_Mayus = [x.upper() for x in nombres]
+    logging.debug("Retirar encabezados.")
+    if "VALOR" in valores:
+        valores.remove("VALOR")
+    if "NOMBRE" in nombres_Mayus:
+        nombres_Mayus.remove("NOMBRE")
+    logging.debug("Obtener lista de nombres únicos y valores asociados.")
+    conjuntoNombres = set(nombres_Mayus)
+    valoressumados = []
+    for nombre in conjuntoNombres:
+        logging.debug("QAQC", nombre)
+        valorNombreElegido= valor_indice(buscador_indices(nombres_Mayus,nombre),valores)
+        valorSumaElegido=operadores.mateSuma(valorNombreElegido)
+        valoressumados.append(valorSumaElegido)
+        logging.debug("QAQC", valorSumaElegido)
+    logging.debug("Obtener lista de nombres únicos y valores asociados.")
+    diccionario = dict(zip(list(conjuntoNombres),valoressumados))
+    logging.debug("QAQC", diccionario)
+    resultado = modificador_nombres(borrar_diccionario(diccionario))
+    logging.debug("QAQC", resultado)
+    logging.debug("Ordenaro por orden alfabético.")
+    valores_ord = {k: v for k, v in sorted(resultado.items())}
+    logging.debug("QAQC",valores_ord)
+    print("Elemento termiando.")
+    
 #Comprobación de funcionamiento.
 
 #leer_excel()
 #nombre_user()
 #valores_excel()
+#valores_finales()
