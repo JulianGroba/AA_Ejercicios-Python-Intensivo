@@ -26,7 +26,7 @@ def generar_valores_aleatorios():
 
 def generar_excel():
     fichero = open(NOMBREFICHERO, "w")
-    fichero.write("NOMBRE, VALOR \n")
+    fichero.write("NOMBRE,VALOR\n")
     try:
         n = int(input("Intruzduca el valor n:"))
         personas = generar_listado_personas(n)
