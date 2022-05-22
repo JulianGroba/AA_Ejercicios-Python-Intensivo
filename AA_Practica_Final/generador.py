@@ -11,7 +11,7 @@ def generar_listado_personas(numero):
         personas.append(nueva_persona)
     return personas
 
-def generar_valores_aleatorios():
+def generar_valores_aleatorios(n):
     nuevo_valor = 0
     try:
         if n!=0:
@@ -31,7 +31,7 @@ def generar_excel():
         n = int(input("Intruzduca el valor n:"))
         personas = generar_listado_personas(n)
         for p in personas:
-            v = generar_valores_aleatorios()
+            v = generar_valores_aleatorios(n)
             fichero.write( p + "," + str(v) + "\n")      
     except ValueError:
             print("Valor introducido no es un entero, se procede con 1000")
@@ -44,5 +44,5 @@ def generar_excel():
     fichero.close()
     print("Proceso terminado")
 #Comprobación de funcionamiento.
-#generar_excel()
+generar_excel()
 
