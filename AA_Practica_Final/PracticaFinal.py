@@ -26,7 +26,7 @@ import mapeador
 
 
 #generador.generar_excel()
-mapeador.nombre_user()
+#mapeador.nombre_user()
 
 
 
